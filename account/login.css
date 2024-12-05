@@ -11,6 +11,9 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header */
@@ -53,80 +56,73 @@ body {
 
 /* Main Section */
 main {
-    padding: 20px;
+    flex: 1; /* Make sure the main content takes available space */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-}
-
-/* Product Container */
-.product-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-/* Image Gallery */
-.image-container {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-}
-
-.image-row {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.image-row img, .image-container img {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 10px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Product Detail */
-.product-detail {
-    width: 45%;
     padding: 20px;
+}
+
+/* Login Form */
+form {
     background-color: #fff;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
-.product-detail h1 {
-    font-size: 1.5rem;
+form div {
     margin-bottom: 15px;
 }
 
-.product-detail p {
+form label {
     font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.product-detail b {
-    font-weight: bold;
-    color: #007bff;
-}
-
-.product-detail button {
+form button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: #1f2021;
     color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 15px;
 }
 
-.product-detail button:hover {
+form button:hover {
     background-color: #0056b3;
+}
+
+form p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+form a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
 }
 
 /* Footer */
@@ -135,9 +131,9 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
+    width: 100%;
     position: relative;
     bottom: 0;
-    width: 100%;
 }
 
 footer .social-media {
@@ -152,4 +148,3 @@ footer .social-media img {
     width: 25px;
     height: 25px;
 }
-

@@ -1,0 +1,107 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Font */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header - Make it Full Width */
+.header-container {
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+}
+
+.header-container .logo {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.header-container nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-container nav ul li {
+    margin-left: 20px;
+}
+
+.header-container nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.header-container nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+}
+
+/* About Us Page Styling */
+.description-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.description-container div {
+    margin-bottom: 30px;
+}
+
+.description-container h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.description-container p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.description-container ul {
+    font-size: 1rem;
+    color: #555;
+}
+
+.description-container ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+}
+
+footer .social-media img {
+    width: 25px;
+    height: 25px;
+}

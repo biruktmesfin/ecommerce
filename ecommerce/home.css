@@ -1,87 +1,74 @@
-/* home.css */
-
-/* Global Styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body and Font */
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: rgb(225, 207, 147);
-    color: #333;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    margin-top: 80px; /* Adjusted for sticky header */
 }
 
-a {
+/* Sticky Header */
+.header-container {
+    position: fixed; /* Keeps the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Spans the full width */
+    z-index: 1000; /* Ensures the header is on top */
+    background-color: #333; /* Dark background for header */
+    color: #fff; /* White text for visibility */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a shadow for separation */
+}
+
+.header-container .logo {
+    font-size: 2rem;
+    margin: 0;
+    display: inline-block;
+    color: #fff;
     text-decoration: none;
-    color: #333;
+}
+
+.header-container nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container nav ul li {
+    margin-left: 20px;
+}
+
+.header-container nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #007bff; /* Shopify-like blue on hover */
-}
-
-/* Header Styles */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo a {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    font-size: 1rem;
-    padding: 5px 0;
-    position: relative;
-}
-
-nav ul li a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #007bff;
-    transition: width .3s;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
+.header-container nav ul li a:hover {
+    color: #f4b400; /* Highlight color for links */
 }
 
 /* Banner Section */
 .banner {
-    background: url('banner-image.jpg') no-repeat center center/cover;
-    color: #fff;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 50px 20px;
     text-align: center;
-    padding: 100px 20px;
 }
 
 .banner h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 .banner p {
@@ -89,124 +76,82 @@ nav ul li a:hover::after {
 }
 
 /* Featured Products Section */
-main {
-    padding: 50px 10%;
+section {
+    padding: 30px 20px;
 }
 
-main section:first-of-type {
-    margin-bottom: 50px;
-}
-
-.featured-products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.featured-products div {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
     text-align: center;
-    transition: box-shadow 0.3s ease;
 }
 
-.featured-products div:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+section div {
+    display: inline-block;
+    width: 23%;
+    margin: 1%;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.featured-products img {
-    max-width: 100%;
+section div img {
+    width: 100%;
     height: auto;
-    margin-bottom: 15px;
+    border-radius: 5px;
 }
 
-.featured-products h3 {
+section div h3 {
     font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+section div p {
+    font-size: 1rem;
+    color: #b12704; /* Highlight price in red */
+}
+
+section div a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #1c1d1f;
+    text-decoration: none;
+}
+
+section div a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Dark footer background */
+    color: #fff; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-container {
     margin-bottom: 10px;
 }
 
-.featured-products p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    color: #007bff; /* Highlight price in blue */
-    font-weight: bold;
+footer .social-media {
+    margin-top: 10px;
 }
 
-.featured-products a {
+footer .social-media a {
+    margin: 0 10px;
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
 }
 
-.featured-products a:hover {
-    background-color: #0056b3;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #f8f8f8;
-    padding: 30px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-container {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #666;
-}
-
-.social-media {
-    display: flex;
-    gap: 15px;
-}
-
-.social-media a img {
-    width: 24px;
-    height: 24px;
+footer .social-media img {
+    width: 25px;
+    height: 25px;
     transition: transform 0.3s ease;
 }
 
-.social-media a:hover img {
-    transform: scale(1.2);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    nav ul li {
-        width: 100%;
-    }
-
-    nav ul li a {
-        padding: 10px 0;
-        width: 100%;
-    }
-
-    .banner {
-        padding: 70px 20px;
-    }
-
-    .banner h2 {
-        font-size: 2.5rem;
-    }
-
-    main {
-        padding: 30px 5%;
-    }
+footer .social-media img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
 }
